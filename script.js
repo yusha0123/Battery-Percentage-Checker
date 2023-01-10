@@ -33,8 +33,12 @@ const checkbattery = () => {
 
 document.getElementById("refresh-btn").addEventListener("click", function () {
   document.getElementById("rotate").classList.add("rotating");
+  $(".btn-primary").addClass('disabled');
   setTimeout(() => {
     document.getElementById("rotate").classList.remove("rotating");
+    $(".btn-primary").removeClass('disabled');
     checkbattery();
   }, 1000);
 })
+
+
