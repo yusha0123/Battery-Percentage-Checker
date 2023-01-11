@@ -5,7 +5,8 @@ const progress_colour = document.getElementById("progress");
 const checkbattery = () => {
   navigator.getBattery().then(function (battery) {
     const level = battery.level;
-    const status = level * 100;
+     let status = level * 100;
+     status=Math.floor(status);
     if (status > 60) {
       progress_colour.classList.add("bg-success");
       percentage.classList.add("text-success");
